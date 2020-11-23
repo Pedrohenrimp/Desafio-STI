@@ -66,17 +66,12 @@ inscricoes, alunos, disciplinas, cursos = copiarDados(arquivo)
 #mostra uma lista de matriculas e seus respectivos CRs.
 print("------- O CR dos alunos é: --------")
 for i in range(0, len(alunos)):
-    print(alunos[i].matricula, " - ", int(alunos[i].calcularCR()))
+    alunos[i].mostrarCR()
+print("-----------------------------------")
 
 #mostra uma lista de codigos de curso e suas respectivas medias de CR.
-print("-----------------------------------")
 print("----- Média de CR dos cursos ------")
 for i in range(0, len(cursos)):
-    if(len(str(cursos[i].codigo_curso)) == 3):
-        print(cursos[i].codigo_curso, " - ", int(cursos[i].calcularMediaCR()))
-    elif(len(str(cursos[i].codigo_curso)) == 2):
-        print(cursos[i].codigo_curso, "  - ", int(cursos[i].calcularMediaCR()))
-    elif(len(str(cursos[i].codigo_curso)) == 1):
-        print(cursos[i].codigo_curso, "   - ", int(cursos[i].calcularMediaCR()))        
+    cursos[i].mostrarMediaCR()        
 print("-----------------------------------")
 

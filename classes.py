@@ -23,6 +23,11 @@ class Aluno:
             soma_ch += int(self.inscricoes[i].carga_horaria)
         cr_aluno = soma_notas / soma_ch
         return cr_aluno
+    #Funcao para mostrar o CR do aluno.
+    def mostrarCR(self):
+        print(self.matricula, " - ", int(self.calcularCR()))
+        
+    
 
 #Objeto Disciplina para armazenar os dados agrupados por codigo da disciplina.
 class Disciplina:
@@ -43,6 +48,9 @@ class Disciplina:
                     soma_ch += int(self.alunos[i].inscricoes[j].carga_horaria)
         cr_disciplina = soma_notas / soma_ch
         return cr_disciplina
+    #Funcao para mostrar o CR medio da disciplina.
+    def mostrarMediaCR(self):
+        print(self.codigo_disciplina, " - ", int(self.calcularMediaCR()))
         
 #Objeto Curso para armazenar os dados agrupados por codigo do curso.
 class Curso:
@@ -59,5 +67,11 @@ class Curso:
             soma_ch += int(self.disciplinas[i].carga_horaria)
         cr_curso = soma_notas / soma_ch
         return cr_curso
-        
-
+    #Funcao para mostrar o CR medio do curso.
+    def mostrarMediaCR(self):
+        if(len(str(self.codigo_curso)) == 3):
+            print(self.codigo_curso, " - ", int(self.calcularMediaCR()))
+        elif(len(str(self.codigo_curso)) == 2):
+            print(self.codigo_curso, "  - ", int(self.calcularMediaCR()))
+        elif(len(str(self.codigo_curso)) == 1):
+            print(self.codigo_curso, "   - ", int(self.calcularMediaCR()))
